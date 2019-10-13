@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+android {
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId 'com.SMAStudios.Call_Recording_program'
+
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 12
+        versionName '2.1'
+        multiDexEnabled true
+        // vectorDrawables.useSupportLibrary = true
+        lintOptions {
+            disable 'MissingTranslation'
+        }
+        dexOptions {
+            javaMaxHeapSize "4g"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    implementation files('libs/android-smart-image-view-1.0.0.jar')
+    implementation files('libs/dropbox-android-sdk-1.6.3.jar')
+    implementation files('libs/json_simple-1.1.jar')
+    implementation files('libs/mpandroidchartlibrary-2-1-5.jar')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:animated-vector-drawable:28.0.0'
+    implementation 'com.android.support:support-media-compat:28.0.0'
+    implementation 'com.android.support:customtabs:28.0.0'
+    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.gms:play-services-ads:17.1.1'
+}
